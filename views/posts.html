@@ -1,0 +1,64 @@
+<div id="posts" hm-swipedown="swipeDown()">
+   <div style="display: none" class="updating" ng-show="updating" ng-animate="'update'">Обновление</div>
+   <div style="display: none" class="updating" ng-show="FAV && !liked.length">
+      Вы еще не сохранили ни одного поста.
+   </div>
+
+   <div ng-repeat="post in posts | orderBy:order:true" class="post">
+
+      <div class="post-inner">
+         <div class="text" ng-show="post.text.length" ng-init="text = (post.text | readMore); show=false">
+            <span ng-bind-html-unsafe="text[0]"></span>
+            <a ng-show="text[1] && ! show" ng-click="show=true" class="read-more">Читать далее</a>
+            <span ng-show="show" ng-bind-html-unsafe="text[1]"></span>
+         </div>
+
+         <div class="images">
+            <div ng-repeat="photo in post.photos" class="image-container">
+               <span class="zoom" hm-tap="zoomImage(photo.big)"></span>
+               <img ng-src="{{ photo.small }}" class="image">
+            </div>
+
+            <div ng-repeat="gif in post.gifs" class="image-container">
+               <span class="gif"></span>
+               <img ng-src="{{ gif.preview }}"
+                    ng-click="openGif(gif.url, $event)"
+                    data-url="{{ gif.url }}"
+                    data-preview="{{ gif.preview }}"
+                    data-opened="false"
+                    class="image gif-image">
+            </div>
+         </div>
+
+         <ul class="links" ng-show="post.links.length">
+            <li ng-repeat="link in post.links" class="link">
+               <a ng-href="{{ link.url }}" target="_blank">{{ link.title }}</a>
+            </li>
+         </ul>
+
+      </div>
+
+      <div class="meta">
+         <table>
+            <tr>
+               <td>
+                  <span class="group">{{ post.group }}</span>
+               </td>
+
+               <td class="time-td">
+                  <span am-time-ago="post.date * 1000" class="time"></span>
+               </td>
+
+               <td class="like-td">
+                  <span hm-tap="like(post.id)" class="like" ng-class="{active: isLiked(post.id)}"></span>
+               </td>
+            </tr>
+         </table>
+      </div>
+
+      <div class="clear"></div>
+
+   </div>
+
+   <div ng-show="loading" class="loading">Загрузка контента</div>
+</div>

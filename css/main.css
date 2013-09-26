@@ -1,0 +1,593 @@
+body {
+  margin: 0;
+  font-family: "Open Sans", 'Roboto', Arial, sans-serif;
+  font-size: 15pt;
+  color: #333344;
+  background: #c9d5d7;
+}
+body.zoom {
+  overflow: hidden;
+}
+body.zoom #view {
+  overflow: hidden;
+  position: absolute;
+  max-width: 100%;
+}
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: moz-none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a {
+  color: #355d99;
+  text-decoration: underline;
+  cursor: pointer;
+}
+a:active {
+  color: #2b4b7b;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.clear {
+  clear: both;
+}
+.clear:before {
+  content: "";
+  display: table;
+  clear: both;
+}
+.ng-cloak {
+  display: none !important;
+}
+.menu-container {
+  margin: 0 8pt;
+}
+#header {
+  position: fixed;
+  top: -2pt;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.15);
+}
+#header .header-block {
+  padding: 9pt 0 7pt 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+#header .header-block:active {
+  box-shadow: 0 0 50pt rgba(0, 0, 0, 0.1) inset !important;
+}
+#header .header-block span {
+  margin-left: -1.2em;
+}
+.header-push {
+  height: 32pt;
+}
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10;
+}
+#footer .head-colors {
+  position: fixed;
+  bottom: 0;
+  font-size: 0;
+  box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.2);
+}
+#footer .head-colors td {
+  height: 4pt;
+}
+.menu-container {
+  margin-top: 10pt;
+  position: relative;
+  z-index: 2;
+}
+.menu-container .button-container {
+  margin: 10pt 0;
+  text-align: center;
+}
+.menu-container .button-container .button {
+  padding: 8pt 0;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.menu-container .button-container .button:active {
+  box-shadow: 0 0 50pt rgba(0, 0, 0, 0.2) inset !important;
+}
+.menu-container .button-container .button.favorite {
+  background: #8E3D8D;
+}
+.menu-container .button-container .submenu-container {
+  -webkit-transition: 0.1s linear all;
+  -moz-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+  margin: 10pt 14pt 0;
+  font-size: 14pt;
+  max-height: 400px;
+  height: 0;
+  overflow: hidden;
+  margin-top: 0;
+}
+.menu-container .button-container .submenu-container.opened {
+  -webkit-transition: 0.1s linear all;
+  -moz-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+  height: auto;
+  margin-top: 10pt;
+}
+.menu-container .button-container .submenu-container div {
+  padding: 4pt 0;
+  border-bottom: 1px solid rgba(30, 35, 40, 0.2);
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1);
+  color: #2F4252;
+}
+.menu-container .button-container .submenu-container div:last-of-type {
+  border-bottom: none;
+}
+.menu-container .button-container .submenu-container div:active {
+  background: rgba(55, 55, 55, 0.1);
+}
+.menu-container .button-container .submenu-container:last-child {
+  border-bottom: none;
+}
+#bg-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+#bg-container .image {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: 300ms linear opacity;
+  -moz-transition: 300ms linear opacity;
+  transition: 300ms linear opacity;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#bg-container .image.show {
+  opacity: 0.8;
+  -webkit-transition: 300ms linear opacity;
+  -moz-transition: 300ms linear opacity;
+  transition: 300ms linear opacity;
+}
+#posts .post {
+  overflow: hidden;
+  max-width: 100%;
+  margin: 10pt 6pt;
+  border-radius: 2px;
+  padding: 0;
+  font-size: 0pt;
+  box-shadow: 0pt 0pt 1px rgba(0, 0, 0, 0.3);
+  background: #ffffff;
+}
+#posts .post .post-inner .text {
+  font-size: 11.5pt;
+  padding: 4pt 5pt 4pt;
+  max-width: 100%;
+  color: #333344;
+}
+#posts .post .post-inner .text span,
+#posts .post .post-inner .text a {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+#posts .post .post-inner .text .link {
+  display: inline-block;
+}
+#posts .post .post-inner .text .link:before {
+  content: '\e805';
+  font-family: "fontello";
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
+}
+#posts .post .post-inner .text .link:before {
+  font-size: 0.7em;
+  margin: 1pt 2pt 0 0;
+  vertical-align: middle;
+}
+#posts .post .post-inner .text .read-more {
+  text-decoration: none;
+  display: inline-block;
+  border-bottom: 1px dashed;
+  line-height: 1em;
+}
+#posts .post .post-inner .text .read-more:active {
+  background: rgba(53, 93, 153, 0.1);
+}
+#posts .post .post-inner .links {
+  margin: 0 0 2pt;
+  padding: 0;
+  list-style: none;
+  font-size: 10pt;
+}
+#posts .post .post-inner .links .link a {
+  padding: 5pt 5pt;
+  display: block;
+}
+#posts .post .post-inner .links .link a:before {
+  content: '\e805';
+  font-family: "fontello";
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
+}
+#posts .post .post-inner .links .link a:before {
+  margin-right: 5pt;
+  color: #4374be;
+}
+#posts .post .post-inner .links .link a:active {
+  background: rgba(53, 93, 153, 0.1);
+}
+#posts .post .post-inner .images {
+  text-align: center;
+}
+#posts .post .post-inner .images .image-container {
+  position: relative;
+  text-align: center;
+  margin-bottom: 2pt;
+}
+#posts .post .post-inner .images .image-container .zoom {
+  font-size: 14pt;
+  position: absolute;
+  right: -2pt;
+  top: -3pt;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  z-index: 3;
+  padding: 10pt;
+}
+#posts .post .post-inner .images .image-container .zoom:before {
+  content: '\e80b';
+  font-family: "fontello";
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
+}
+#posts .post .post-inner .images .image-container .zoom:active {
+  color: #E13004;
+}
+#posts .post .post-inner .images .image-container .gif {
+  font-size: 8pt;
+  position: absolute;
+  right: 8pt;
+  top: 3pt;
+  color: #333344;
+  text-shadow: 1px 1px 0px #ffffff;
+  z-index: 3;
+}
+#posts .post .post-inner .images .image-container .gif:before {
+  content: 'gif';
+  font-family: "fontello";
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
+}
+#posts .post .post-inner .images .image-container .image {
+  max-width: 100%;
+  max-height: 400pt;
+  display: inline;
+}
+#posts .post .post-inner .images .image-container .image.gif-image {
+  margin: 4pt auto 2pt;
+}
+#posts .post .meta {
+  font-size: 10pt;
+  padding: 1pt 0 2pt;
+  color: #777799;
+}
+#posts .post .meta .group {
+  color: #494961;
+  font-size: 11pt;
+  padding-left: 4pt;
+  display: block;
+  max-width: 120pt;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#posts .post .meta .like-td {
+  width: 22pt;
+  text-align: center;
+}
+#posts .post .meta .like-td .like {
+  position: relative;
+  margin: -10pt -11pt -11pt;
+  padding: 10px;
+  display: inline-block;
+  font-size: 15pt;
+  line-height: 19pt;
+  color: #5f5f7e;
+}
+#posts .post .meta .like-td .like:before {
+  content: '\e804';
+  font-family: "fontello";
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
+}
+#posts .post .meta .like-td .like.active {
+  color: #ff1802;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+#posts .post .meta .like-td .like.active:before {
+  content: '\e803';
+  font-family: "fontello";
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
+}
+#posts .post .meta .time-td {
+  text-align: right;
+}
+#posts .loading,
+#posts .updating {
+  overflow: hidden;
+  max-width: 100%;
+  margin: 10pt 6pt;
+  border-radius: 2px;
+  padding: 0;
+  font-size: 0pt;
+  box-shadow: 0pt 0pt 1px rgba(0, 0, 0, 0.3);
+  background: #ffffff;
+  padding: 5pt 0;
+  text-align: center;
+  font-size: 12pt;
+}
+#posts .loading .post-inner .text,
+#posts .updating .post-inner .text {
+  font-size: 11.5pt;
+  padding: 4pt 5pt 4pt;
+  max-width: 100%;
+  color: #333344;
+}
+#posts .loading .post-inner .text span,
+#posts .updating .post-inner .text span,
+#posts .loading .post-inner .text a,
+#posts .updating .post-inner .text a {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+#posts .loading .post-inner .text .link,
+#posts .updating .post-inner .text .link {
+  display: inline-block;
+}
+#posts .loading .post-inner .text .link:before,
+#posts .updating .post-inner .text .link:before {
+  content: '\e805';
+  font-family: "fontello";
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
+}
+#posts .loading .post-inner .text .link:before,
+#posts .updating .post-inner .text .link:before {
+  font-size: 0.7em;
+  margin: 1pt 2pt 0 0;
+  vertical-align: middle;
+}
+#posts .loading .post-inner .text .read-more,
+#posts .updating .post-inner .text .read-more {
+  text-decoration: none;
+  display: inline-block;
+  border-bottom: 1px dashed;
+  line-height: 1em;
+}
+#posts .loading .post-inner .text .read-more:active,
+#posts .updating .post-inner .text .read-more:active {
+  background: rgba(53, 93, 153, 0.1);
+}
+#posts .loading .post-inner .links,
+#posts .updating .post-inner .links {
+  margin: 0 0 2pt;
+  padding: 0;
+  list-style: none;
+  font-size: 10pt;
+}
+#posts .loading .post-inner .links .link a,
+#posts .updating .post-inner .links .link a {
+  padding: 5pt 5pt;
+  display: block;
+}
+#posts .loading .post-inner .links .link a:before,
+#posts .updating .post-inner .links .link a:before {
+  content: '\e805';
+  font-family: "fontello";
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
+}
+#posts .loading .post-inner .links .link a:before,
+#posts .updating .post-inner .links .link a:before {
+  margin-right: 5pt;
+  color: #4374be;
+}
+#posts .loading .post-inner .links .link a:active,
+#posts .updating .post-inner .links .link a:active {
+  background: rgba(53, 93, 153, 0.1);
+}
+#posts .loading .post-inner .images,
+#posts .updating .post-inner .images {
+  text-align: center;
+}
+#posts .loading .post-inner .images .image-container,
+#posts .updating .post-inner .images .image-container {
+  position: relative;
+  text-align: center;
+  margin-bottom: 2pt;
+}
+#posts .loading .post-inner .images .image-container .zoom,
+#posts .updating .post-inner .images .image-container .zoom {
+  font-size: 14pt;
+  position: absolute;
+  right: -2pt;
+  top: -3pt;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  z-index: 3;
+  padding: 10pt;
+}
+#posts .loading .post-inner .images .image-container .zoom:before,
+#posts .updating .post-inner .images .image-container .zoom:before {
+  content: '\e80b';
+  font-family: "fontello";
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
+}
+#posts .loading .post-inner .images .image-container .zoom:active,
+#posts .updating .post-inner .images .image-container .zoom:active {
+  color: #E13004;
+}
+#posts .loading .post-inner .images .image-container .gif,
+#posts .updating .post-inner .images .image-container .gif {
+  font-size: 8pt;
+  position: absolute;
+  right: 8pt;
+  top: 3pt;
+  color: #333344;
+  text-shadow: 1px 1px 0px #ffffff;
+  z-index: 3;
+}
+#posts .loading .post-inner .images .image-container .gif:before,
+#posts .updating .post-inner .images .image-container .gif:before {
+  content: 'gif';
+  font-family: "fontello";
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
+}
+#posts .loading .post-inner .images .image-container .image,
+#posts .updating .post-inner .images .image-container .image {
+  max-width: 100%;
+  max-height: 400pt;
+  display: inline;
+}
+#posts .loading .post-inner .images .image-container .image.gif-image,
+#posts .updating .post-inner .images .image-container .image.gif-image {
+  margin: 4pt auto 2pt;
+}
+#posts .loading .meta,
+#posts .updating .meta {
+  font-size: 10pt;
+  padding: 1pt 0 2pt;
+  color: #777799;
+}
+#posts .loading .meta .group,
+#posts .updating .meta .group {
+  color: #494961;
+  font-size: 11pt;
+  padding-left: 4pt;
+  display: block;
+  max-width: 120pt;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#posts .loading .meta .like-td,
+#posts .updating .meta .like-td {
+  width: 22pt;
+  text-align: center;
+}
+#posts .loading .meta .like-td .like,
+#posts .updating .meta .like-td .like {
+  position: relative;
+  margin: -10pt -11pt -11pt;
+  padding: 10px;
+  display: inline-block;
+  font-size: 15pt;
+  line-height: 19pt;
+  color: #5f5f7e;
+}
+#posts .loading .meta .like-td .like:before,
+#posts .updating .meta .like-td .like:before {
+  content: '\e804';
+  font-family: "fontello";
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
+}
+#posts .loading .meta .like-td .like.active,
+#posts .updating .meta .like-td .like.active {
+  color: #ff1802;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+#posts .loading .meta .like-td .like.active:before,
+#posts .updating .meta .like-td .like.active:before {
+  content: '\e803';
+  font-family: "fontello";
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
+}
+#posts .loading .meta .time-td,
+#posts .updating .meta .time-td {
+  text-align: right;
+}
+#zoom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 4;
+  overflow: hidden;
+}
+#zoom .overlay {
+  height: 100%;
+  width: 100%;
+  background: rgba(60, 60, 60, 0.95);
+}
+#zoom .image {
+  position: fixed;
+  top: 0%;
+}
+#zoom .image img {
+  display: inline-block;
+  margin: auto;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+.update-show,
+.update-hide {
+  -webkit-transition: 0.1s linear all;
+  -moz-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+}
+.update-show.update-show-active,
+.update-hide {
+  height: 11pt;
+  font-size: 11pt;
+  padding: 5pt 0;
+  overflow: hidden;
+}
+.update-hide.update-hide-active,
+.update-show {
+  opacity: 0.4;
+  height: 0;
+  padding: 0;
+  font-size: 0 !important;
+}
