@@ -3,35 +3,16 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+   <meta name="appsfuel_code" content="b8f7176fd5e6dde"/>
    <title>SimpleSurf</title>
+   <link rel="stylesheet" href="css/icons.css"/>
    <link rel="stylesheet" href="css/fontello.css"/>
-   <link rel="stylesheet" href="css/image-bg.css"/>
    <link rel="stylesheet" href="css/main.css"/>
 
 </head>
 <body ng-class="{zoom: zoomOpened}">
 
-<div ng-controller="HeaderController" class="ng-cloak" ng-show="isBack">
-   <div id="header">
-      <div class="header-block" ng-style="{background: colorHeader}" hm-tap="back()">
-         <span class="icon-angle-double-left"></span> {{ title }}
-      </div>
-   </div>
-
-   <div class="header-push"></div>
-</div>
-
 <div id="view" ng-view></div>
-
-<div ng-controller="ZoomController">
-   <div id="zoom" ng-show="zoomOpened">
-      <div class="overlay" hm-tap="close()"></div>
-      <div class="image" id="zoom-wrap" hm-doubletap="resize()">
-         <img ng-src="{{image}}" id="zoom-image" hm-drag="drag($event)">
-      </div>
-   </div>
-</div>
 
 <script src="js/build.min.js"></script>
 <script>

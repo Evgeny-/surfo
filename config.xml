@@ -23,6 +23,5 @@
 
     <icon src="icons/256.png" with="256" height="256" />
     <icon src="icons/128.png" with="128" height="128" />
-    <icon src="icons/64.png"  with="64" height="64" />
 
 </widget>

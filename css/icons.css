@@ -1,0 +1,55 @@
+@font-face {
+   font-family: 'icomoon';
+   src:url('../font/icomoon.eot?1');
+   src:url('../font/icomoon.eot?#iefix') format('embedded-opentype'),
+   url('../font/icomoon.ttf?1') format('truetype'),
+   url('../font/icomoon.woff?1') format('woff'),
+   url('../font/icomoon.svg#icomoon') format('svg');
+   font-weight: normal;
+   font-style: normal;
+}
+
+[class*="menu-icon-"] {
+   font-family: 'icomoon';
+   speak: none;
+   font-style: normal;
+   font-weight: normal;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1;
+
+   /* Better Font Rendering =========== */
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+.menu-icon-erotic2:before {
+   content: "\e600";
+}
+.menu-icon-fav:before {
+   content: "\e601";
+}
+.menu-icon-fun:before {
+   content: "\e602";
+}
+.menu-icon-games:before {
+   content: "\e603";
+}
+.menu-icon-music:before {
+   content: "\e604";
+}
+.menu-icon-news:before {
+   content: "\e605";
+}
+.menu-icon-science:before {
+   content: "\e606";
+}
+.menu-icon-erotic:before {
+   content: "\e607";
+}
+.menu-icon-interests:before {
+   content: "\e608";
+}
+.menu-icon-cinema:before {
+   content: "\e609";
+}

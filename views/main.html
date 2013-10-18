@@ -1,7 +1,7 @@
-<div class="menu-container">
-   <div class="button-container" ng-repeat="(id, menu) in menus">
-      <div class="button" ng-style="{background: menu.color}" hm-tap="openMenu($index, menu.submenu.length)">
-         {{ menu.name }}
+<div ng-controller="IndexController" class="menu-container">
+   <div class="button-container" ng-repeat="(id, menu) in menus" ng-style="{background: menu.color}">
+      <div class="button" hm-tap="openMenu($index, menu.submenu.length)">
+         <i class="menu-icon-{{ menu.icon }}"></i> {{ menu.name }}
       </div>
 
       <div class="submenu-container" ng-class="{opened: $index === showedMenu}"> <!-- ng-animate="'submenu'"-->
@@ -10,11 +10,10 @@
    </div>
 
    <div class="button-container">
-      <div class="button favorite" hm-tap="openFavorite()">Избранное</div>
+      <div class="button favorite" hm-tap="openFavorite()">
+         <i class="menu-icon-fav"></i> Избранное
+      </div>
    </div>
-
 </div>
 
-<div id="bg-container">
-    <div class="image-bg image" ng-class="{show: true}"></div>
-</div>
+
