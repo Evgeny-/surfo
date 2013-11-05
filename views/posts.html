@@ -28,10 +28,10 @@
            </div>
 
            <div ng-repeat="gif in post.gifs" class="image-container">
-              <span class="gif"></span>
+              <span class="gif" ng-click="openGif($event)">Загрузка...</span>
               <img ng-src="{{ gif.preview }}"
-                   ng-click="openGif(gif.url, $event)"
                    data-url="{{ gif.url }}"
+                   ng-click="openGif($event, true)"
                    data-preview="{{ gif.preview }}"
                    data-opened="false"
                    class="image gif-image">
@@ -49,14 +49,8 @@
      <div class="meta">
         <table>
            <tr>
-              <td>
-                 <span class="group">{{ post.group }}</span>
-              </td>
-
-              <td class="time-td">
-                 <span am-time-ago="post.date * 1000" class="time"></span>
-              </td>
-
+              <td><span class="group" ng-bind="post.group"></span></td>
+              <td class="time-td"><span am-time-ago="post.date*1" class="time"></span></td>
               <td class="like-td">
                  <span hm-tap="like(post.id)" class="like" ng-class="{active: isLiked(post.id)}"></span>
               </td>
@@ -74,8 +68,12 @@
 <div ng-controller="ZoomController">
   <div id="zoom" ng-show="zoomOpened">
      <div class="overlay" hm-tap="close()"></div>
-     <div class="image" id="zoom-wrap" hm-doubletap="resize()">
-        <img ng-src="{{image}}" id="zoom-image" hm-drag="drag($event)">
+     <div class="image" id="zoom-wrap">
+        <img ng-src="{{image}}"
+             id="zoom-image"
+             hm-drag="drag($event)"
+             hm-tap="close()">
+        <!-- hm-pinch="pinch($event)" -->
      </div>
   </div>
   </div>

@@ -1,5 +1,6 @@
 body {
-  margin: 0;
+  max-width: 700pt;
+  margin: 0 auto;
   font-family: "Open Sans", 'Roboto', Arial, sans-serif;
   font-size: 15pt;
   color: #333344;
@@ -150,16 +151,16 @@ table {
   transform: scaleY(1);
 }
 .menu-container .button-container .submenu-container div {
-  padding: 5pt 7pt;
-  border-bottom: 1px solid rgba(30, 35, 40, 0.2);
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1);
-  color: #000;
+  padding: 5pt 8pt 6pt;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 .menu-container .button-container .submenu-container div:last-of-type {
   border-bottom: none;
 }
 .menu-container .button-container .submenu-container div:active {
-  background: rgba(55, 55, 55, 0.1);
+  background: rgba(105, 105, 105, 0.1);
 }
 .menu-container .button-container .submenu-container:last-child {
   border-bottom: none;
@@ -262,20 +263,47 @@ table {
   color: #E13004;
 }
 #posts .post .post-inner .images .image-container .gif {
-  font-size: 8pt;
-  position: absolute;
-  right: 8pt;
-  top: 3pt;
   color: #333344;
-  text-shadow: 1px 1px 0px #ffffff;
+  position: absolute;
+  right: 50%;
+  top: 50%;
   z-index: 3;
+  font-size: 0;
 }
 #posts .post .post-inner .images .image-container .gif:before {
-  content: 'gif';
+  content: ' \e800';
   font-family: "fontello";
   display: inline-block;
   text-align: center;
   line-height: 1em;
+}
+#posts .post .post-inner .images .image-container .gif:before {
+  color: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  font-size: 20pt;
+  line-height: 40pt;
+  margin-right: -20pt;
+  margin-top: -20pt;
+  width: 35pt;
+  padding-left: 5pt;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 100%;
+}
+#posts .post .post-inner .images .image-container .gif.loading {
+  font-size: 15pt;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.6);
+  width: 70pt;
+  height: 30pt;
+  margin: -20pt -35pt 0 0;
+  line-height: 30pt;
+  display: inline-block;
+  text-align: center;
+}
+#posts .post .post-inner .images .image-container .gif.loading:before,
+#posts .post .post-inner .images .image-container .gif.loaded:before {
+  display: none;
 }
 #posts .post .post-inner .images .image-container .image {
   max-width: 100%;
