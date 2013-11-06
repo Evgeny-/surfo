@@ -24,7 +24,7 @@
         <div class="images">
            <div ng-repeat="photo in post.photos" class="image-container">
               <span class="zoom" hm-tap="zoomImage(photo.big)"></span>
-              <img ng-src="{{ photo.small }}" class="image">
+              <img ng-src="{{ getPhoto(photo) }}" class="image">
            </div>
 
            <div ng-repeat="gif in post.gifs" class="image-container">
