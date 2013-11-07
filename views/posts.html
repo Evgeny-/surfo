@@ -1,4 +1,4 @@
-<div ng-controller="HeaderController" class="ng-cloak" ng-show="isBack">
+<div ng-controller="HeaderController" class="ng-cloak" ng-show="isBack && !isTablet">
   <div id="header">
      <div class="header-block" ng-style="{background: colorHeader}" hm-tap="back()">
         <span class="icon-angle-double-left"></span> {{ title }}
@@ -14,7 +14,7 @@
 
   <div ng-repeat="post in posts | orderBy:order:true" class="post">
 
-     <div class="post-inner">
+     <div class="post-inner" bind-links>
         <div class="text" ng-show="post.text.length" ng-init="text = (post.text | readMore); show=false">
            <span ng-bind-html-unsafe="text[0]"></span>
            <a ng-show="text[1] && ! show" ng-click="show=true" class="read-more">Читать далее</a>

@@ -19,6 +19,9 @@ body.zoom #view {
   position: absolute;
   max-width: 100%;
 }
+body.tablet {
+  max-width: 100%;
+}
 * {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -88,6 +91,9 @@ table {
   .header-push {
     height: 44pt;
   }
+}
+.check-tablet {
+  width: 72pt;
 }
 .menu-container {
   position: relative;
@@ -163,6 +169,38 @@ table {
   .menu-container .submenu-container div {
     padding: 8pt 14pt 9pt;
   }
+}
+.tablet #menu-wrap {
+  position: fixed;
+  left: 5pt;
+  top: 5pt;
+  bottom: 5pt;
+  right: 70%;
+  overflow-y: auto;
+}
+.tablet #menu-wrap .menu-container {
+  box-shadow: 0pt 0pt 1px rgba(0, 0, 0, 0.3);
+}
+.tablet #menu-wrap .menu-container .button {
+  font-size: 14pt;
+  padding: 0.9em 0;
+}
+.tablet #menu-wrap .menu-container .button i {
+  margin: 0 0 0 7%;
+  font-size: 28pt;
+}
+.tablet #menu-wrap .submenu-container {
+  font-size: 13pt;
+}
+.tablet #menu-wrap .submenu-container div {
+  padding: 4pt 10pt 5pt !important;
+}
+.tablet #posts {
+  float: right;
+  width: 70%;
+}
+.tablet #posts .post {
+  margin: 5pt 6pt 10pt !important;
 }
 #posts .post {
   max-width: 100%;
@@ -336,7 +374,7 @@ table {
   white-space: nowrap;
 }
 #posts .meta .like-td {
-  width: 22pt;
+  width: 26pt;
   text-align: center;
 }
 #posts .meta .like-td .like {
@@ -378,9 +416,9 @@ table {
 }
 @media only screen and (min-width: 768px) {
   #posts .post-inner .text {
-    font-size: 13pt;
-    line-height: 17pt;
-    padding: 8pt;
+    font-size: 12pt;
+    line-height: 16pt;
+    padding: 6pt 8pt;
   }
   #posts .post-inner .links {
     font-size: 12pt;

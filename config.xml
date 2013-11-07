@@ -2,8 +2,8 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "ru.surfo.app"
-        versionCode="11"
-        version   = "2.0.1">
+        versionCode="12"
+        version   = "2.1.0">
 
     <name>Surfo</name>
 
@@ -20,12 +20,11 @@
     <preference name="phonegap-version" value="2.9.0" />
     <preference name="target-device" value="universal" />
     <preference name="android-minSdkVersion" value="14" />
-    <preference name="splash-screen-duration" value="2000"/>
 
     <icon src="icons/256.png" with="256" height="256" />
     <icon src="icons/128.png" with="128" height="128" />
 
     <feature name="http://api.phonegap.com/1.0/device" />    
-    <feature name="http://api.phonegap.com/1.0/network" />  
-
+    <feature name="http://api.phonegap.com/1.0/network" />
+    <plugin name="InAppBrowser" value="CDVInAppBrowser" />
 </widget>
