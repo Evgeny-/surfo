@@ -447,6 +447,9 @@ table {
     font-size: 20pt;
   }
 }
+.tablet .zoom {
+  display: none;
+}
 #zoom {
   position: fixed;
   top: 0;
