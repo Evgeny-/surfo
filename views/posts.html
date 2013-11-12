@@ -23,7 +23,7 @@
 
         <div class="images">
            <div ng-repeat="photo in post.photos" class="image-container">
-              <span class="zoom" hm-tap="zoomImage(photo.big)"></span>
+              <span class="zoom" ng-click="zoomImage(photo.big)"></span>
               <img ng-src="{{ getPhoto(photo) }}" class="image">
            </div>
 
@@ -59,7 +59,6 @@
      </div>
 
      <div class="clear"></div>
-
   </div>
 
   <div ng-show="loading" class="loading">Загрузка контента</div>
@@ -68,12 +67,10 @@
 <div ng-controller="ZoomController">
   <div id="zoom" ng-show="zoomOpened">
      <div class="overlay" hm-tap="close()"></div>
-     <div class="image" id="zoom-wrap">
+     <div class="image" id="zoom-wrap" hm-tap="close()">
         <img ng-src="{{image}}"
              id="zoom-image"
-             hm-drag="drag($event)"
              hm-tap="close()">
-        <!-- hm-pinch="pinch($event)" -->
      </div>
   </div>
   </div>
