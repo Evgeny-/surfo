@@ -338,7 +338,7 @@ table {
 
          .link {
             display: inline-block;
-            .font-icon('\e805');
+            .font-icon('\e80c');
 
             &:before {
                font-size: 0.7em;
@@ -360,22 +360,22 @@ table {
          }
       }
 
-   .link {
-      margin: 0 0 2pt;
-      font-size: 10pt;
-      padding: 5pt 5pt;
-      display: block;
-      .font-icon('\e805');
+      .single-link {
+         margin: 0 0 2pt;
+         font-size: 10pt;
+         padding: 5pt 5pt;
+         display: block;
+         .font-icon('\e80c');
 
-      &:before {
-         margin-right: 5pt;
-         color: lighten(@color-link, 10%);
-      }
+         &:before {
+            margin-right: 5pt;
+            color: lighten(@color-link, 10%);
+         }
 
-      &:active {
-         background: fade(@color-link, 10%);
+         &:active {
+            background: fade(@color-link, 10%);
+         }
       }
-   }
 
 
       .image-container {
@@ -463,13 +463,13 @@ table {
       }
 
       .like-td {
-         width: 32pt;
+         width: 30pt;
          text-align: center;
 
          .like {
             position: relative;
             z-index: 5;
-            .font-icon('\e801');
+            .font-icon('\e809');
             margin: -15pt -16pt - 16pt;
             padding: 15pt;
             display: inline-block;
@@ -478,7 +478,7 @@ table {
             color: lighten(@color-body, 40%);
 
             &.active {
-               .font-icon('\e80a');
+               .font-icon('\e80b');
                color: #ff1802;
                text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
             }
@@ -486,6 +486,7 @@ table {
       }
 
       .avatar-td {
+         padding-top: 3pt;
          width: 31pt;
 
          img {
@@ -496,6 +497,7 @@ table {
       }
 
       .name-td {
+         padding-top: 3pt;
          text-align: left;
          vertical-align: top;
 

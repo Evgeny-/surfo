@@ -236,7 +236,7 @@ table {
   display: inline-block;
 }
 #posts .post-inner .text .link:before {
-  content: '\e805';
+  content: '\e80c';
   font-family: "fontello";
   display: inline-block;
   text-align: center;
@@ -256,24 +256,24 @@ table {
 #posts .post-inner .text .read-more:active {
   background: rgba(53, 93, 153, 0.1);
 }
-#posts .post-inner .link {
+#posts .post-inner .single-link {
   margin: 0 0 2pt;
   font-size: 10pt;
   padding: 5pt 5pt;
   display: block;
 }
-#posts .post-inner .link:before {
-  content: '\e805';
+#posts .post-inner .single-link:before {
+  content: '\e80c';
   font-family: "fontello";
   display: inline-block;
   text-align: center;
   line-height: 1em;
 }
-#posts .post-inner .link:before {
+#posts .post-inner .single-link:before {
   margin-right: 5pt;
   color: #4374be;
 }
-#posts .post-inner .link:active {
+#posts .post-inner .single-link:active {
   background: rgba(53, 93, 153, 0.1);
 }
 #posts .post-inner .image-container {
@@ -360,7 +360,7 @@ table {
   padding: 2pt 0 2pt;
 }
 #posts .meta .like-td {
-  width: 32pt;
+  width: 30pt;
   text-align: center;
 }
 #posts .meta .like-td .like {
@@ -374,7 +374,7 @@ table {
   color: #9494af;
 }
 #posts .meta .like-td .like:before {
-  content: '\e801';
+  content: '\e809';
   font-family: "fontello";
   display: inline-block;
   text-align: center;
@@ -385,13 +385,14 @@ table {
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
 #posts .meta .like-td .like.active:before {
-  content: '\e80a';
+  content: '\e80b';
   font-family: "fontello";
   display: inline-block;
   text-align: center;
   line-height: 1em;
 }
 #posts .meta .avatar-td {
+  padding-top: 3pt;
   width: 31pt;
 }
 #posts .meta .avatar-td img {
@@ -400,6 +401,7 @@ table {
   margin: 0 5pt;
 }
 #posts .meta .name-td {
+  padding-top: 3pt;
   text-align: left;
   vertical-align: top;
 }

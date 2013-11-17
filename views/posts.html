@@ -1,7 +1,7 @@
 <table ng-controller="HeaderController" ng-show="!isTablet" ng-style="{background: colorHeader}" id="header">
     <tr>
         <td hm-tap="back()" class="back"><span class="icon-angle-left"></span></td>
-        <td ng-bind="title" class="title"></td>
+        <td hm-tap="back()" ng-bind="title" class="title"></td>
         <td hm-tap="scrollTop()" class="top"><span class="icon-angle-up"></span></td>
     </tr>
 </table>
@@ -23,7 +23,7 @@
 
        <div ng-repeat="photo in post.photos" class="image-container">
           <span class="zoom" ng-click="zoomImage(photo.big)"></span>
-          <img ng-src="{{ getPhoto(photo) }}" class="image" style="visibility: hidden" visible-image>
+          <img ng-src="{{ getPhoto(photo) }}" class="image">
        </div>
 
        <div ng-repeat="gif in post.gifs" class="image-container">
@@ -36,7 +36,7 @@
                class="image gif-image">
        </div>
 
-      <a ng-show="post.links[0]" ng-href="{{ post.links[0].url }}" ng-bind="post.links[0].title" class="link"></a>
+      <a ng-show="post.links[0]" ng-href="{{ post.links[0].url }}" ng-bind="post.links[0].title" class="single-link"></a>
 
      </div>
 
