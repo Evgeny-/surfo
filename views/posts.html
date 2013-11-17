@@ -23,7 +23,7 @@
 
        <div ng-repeat="photo in post.photos" class="image-container">
           <span class="zoom" ng-click="zoomImage(photo.big)"></span>
-          <img ng-src="{{ getPhoto(photo) }}" class="image">
+          <img ng-src="{{ getPhoto(photo) }}" class="image" style="visibility: hidden" visible-image>
        </div>
 
        <div ng-repeat="gif in post.gifs" class="image-container">
@@ -38,6 +38,23 @@
 
       <a ng-show="post.links[0]" ng-href="{{ post.links[0].url }}" ng-bind="post.links[0].title" class="link"></a>
 
+     </div>
+
+     <div class="meta">
+        <table>
+           <tr>
+              <td class="avatar-td">
+                  <img ng-src="{{post.groupAvatar}}">
+              </td>
+              <td class="name-td">
+                  <div class="group" ng-bind="post.group"></div>
+                  <div am-time-ago="post.date" class="time"></div>
+              </td>
+              <td class="like-td">
+                 <span hm-tap="like(post.id)" class="like" ng-class="{active: isLiked(post.id)}"></span>
+              </td>
+           </tr>
+        </table>
      </div>
   </div>
 
