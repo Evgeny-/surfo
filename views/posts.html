@@ -1,15 +1,15 @@
-<div ng-controller="HeaderController" class="ng-cloak" ng-show="isBack && !isTablet">
-  <div id="header">
-     <div class="header-block" ng-style="{background: colorHeader}" hm-tap="back()">
-        <span class="icon-angle-double-left"></span> {{ title }}
-     </div>
-  </div>
+<table ng-controller="HeaderController" ng-show="!isTablet" ng-style="{background: colorHeader}" id="header">
+    <tr>
+        <td hm-tap="back()" class="back"><span class="icon-angle-left"></span></td>
+        <td ng-bind="title" class="title"></td>
+        <td hm-tap="scrollTop()" class="top"><span class="icon-angle-up"></span></td>
+    </tr>
+</table>
 
-  <div class="header-push"></div>
-</div>
+<div class="header-push"></div>
 
 <div ng-controller="PostsController" id="posts" hm-swipedown="swipeDown()">
-  <div ng-class="{opened: updating}" class="updating">Обновление</div>
+  <div ng-class="{opened: updating}" class="updating">Обновление <span class="icon-spin4 animate-spin"></span></div>
   <div ng-class="{opened: FAV && !liked.length}" class="updating">Вы еще не сохранили ни одного поста.</div>
 
   <div ng-repeat="post in posts | orderBy:order:true" class="post">
@@ -21,56 +21,51 @@
            <span ng-show="show" ng-bind-html-unsafe="text[1]"></span>
         </div>
 
-        <div class="images">
-           <div ng-repeat="photo in post.photos" class="image-container">
-              <span class="zoom" ng-click="zoomImage(photo.big)"></span>
-              <img ng-src="{{ getPhoto(photo) }}" class="image">
-           </div>
+       <div ng-repeat="photo in post.photos" class="image-container">
+          <span class="zoom" ng-click="zoomImage(photo.big)"></span>
+          <img ng-src="{{ getPhoto(photo) }}" class="image">
+       </div>
 
-           <div ng-repeat="gif in post.gifs" class="image-container">
-              <span class="gif" ng-click="openGif($event)">Загрузка...</span>
-              <img ng-src="{{ gif.preview }}"
-                   data-url="{{ gif.url }}"
-                   ng-click="openGif($event, true)"
-                   data-preview="{{ gif.preview }}"
-                   data-opened="false"
-                   class="image gif-image">
-           </div>
-        </div>
+       <div ng-repeat="gif in post.gifs" class="image-container">
+          <span class="gif" ng-click="openGif($event)">Загрузка...</span>
+          <img ng-src="{{ gif.preview }}"
+               data-url="{{ gif.url }}"
+               ng-click="openGif($event, true)"
+               data-preview="{{ gif.preview }}"
+               data-opened="false"
+               class="image gif-image">
+       </div>
 
-        <ul class="links" ng-show="post.links.length">
-           <li ng-repeat="link in post.links" class="link">
-              <a ng-href="{{ link.url }}" target="_blank">{{ link.title }}</a>
-           </li>
-        </ul>
+      <a ng-show="post.links[0]" ng-href="{{ post.links[0].url }}" ng-bind="post.links[0].title" class="link"></a>
 
      </div>
 
      <div class="meta">
         <table>
            <tr>
-              <td><span class="group" ng-bind="post.group"></span></td>
-              <td class="time-td"><span am-time-ago="post.date*1" class="time"></span></td>
+              <td class="avatar-td">
+                  <img ng-src="{{post.groupAvatar}}">
+              </td>
+              <td class="name-td">
+                  <div class="group" ng-bind="post.group"></div>
+                  <div am-time-ago="post.date" class="time"></div>
+              </td>
               <td class="like-td">
                  <span hm-tap="like(post.id)" class="like" ng-class="{active: isLiked(post.id)}"></span>
               </td>
            </tr>
         </table>
      </div>
-
-     <div class="clear"></div>
   </div>
 
-  <div ng-show="loading" class="loading">Загрузка контента</div>
+  <div ng-show="loading" class="loading">Загрузка контента <span class="icon-spin4 animate-spin"></span></div>
 </div>
 
 <div ng-controller="ZoomController">
   <div id="zoom" ng-show="zoomOpened">
      <div class="overlay" hm-tap="close()"></div>
      <div class="image" id="zoom-wrap" hm-tap="close()">
-        <img ng-src="{{image}}"
-             id="zoom-image"
-             hm-tap="close()">
+        <img ng-src="{{image}}" id="zoom-image" hm-tap="close()">
      </div>
   </div>
   </div>

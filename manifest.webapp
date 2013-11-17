@@ -2,7 +2,7 @@
   "name": "Surfo",
   "description": "Surfo - vk.com post collection",
   "launch_path": "/index.html",
-   "version" : "2.5",
+   "version" : "2.6",
   "developer": {
     "name": "Evgeny Nikiforov",
     "email" : "likechokolit@gmail.com"
