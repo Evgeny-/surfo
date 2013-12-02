@@ -1,16 +1,16 @@
 <div ng-controller="IndexController" class="menu-container">
    <div class="button-container" ng-repeat="(id, menu) in menus" ng-style="{background: menu.color}">
-      <div class="button" hm-tap="openMenu($index, menu.submenu.length)">
+      <div class="button" ng-click="openMenu($index, menu.submenu.length)">
          <i class="menu-icon-{{ menu.icon }}"></i> {{ menu.name }}
       </div>
 
       <div class="submenu-container" ng-class="{opened: $index === showedMenu}"> <!-- ng-animate="'submenu'"-->
-         <div ng-repeat="smenu in menu.submenu" hm-tap="openCategory(smenu.id)">{{ smenu.name }}</div>
+         <div ng-repeat="smenu in menu.submenu" ng-click="openCategory(smenu.id)">{{ smenu.name }}</div>
       </div>
    </div>
 
    <div class="button-container">
-      <div class="button favorite" hm-tap="openFavorite()">
+      <div class="button favorite" ng-click="openFavorite()">
          <i class="menu-icon-fav"></i> Избранное
       </div>
    </div>

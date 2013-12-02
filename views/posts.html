@@ -1,71 +1,85 @@
 <table ng-controller="HeaderController" ng-show="!isTablet" ng-style="{background: colorHeader}" id="header">
-    <tr>
-        <td hm-tap="back()" class="back"><span class="icon-angle-left"></span></td>
-        <td hm-tap="back()" ng-bind="title" class="title"></td>
-        <td hm-tap="scrollTop()" class="top"><span class="icon-angle-up"></span></td>
-    </tr>
+   <tr>
+      <td ng-click="back()" class="back"><span class="icon-angle-left"></span></td>
+      <td ng-click="back()" ng-bind="title" class="title"></td>
+      <td ng-click="scrollTop()" class="top"><span class="icon-angle-up"></span></td>
+   </tr>
 </table>
 
 <div class="header-push"></div>
 
 <div ng-controller="PostsController" id="posts" hm-swipedown="swipeDown()">
-  <div ng-class="{opened: updating}" class="updating">Обновление <span class="icon-spin4 animate-spin"></span></div>
-  <div ng-class="{opened: FAV && !liked.length}" class="updating">Вы еще не сохранили ни одного поста.</div>
+   <div ng-class="{opened: updating}" class="updating">Обновление <span class="icon-spin4 animate-spin"></span></div>
+   <div ng-class="{opened: FAV && !liked.length}" class="updating">Вы еще не сохранили ни одного поста.</div>
 
-  <div ng-repeat="post in posts | orderBy:order:true" class="post">
+   <div ng-repeat="post in posts | orderBy:order:true" class="post">
 
-     <div class="post-inner" bind-links>
-        <div class="text" ng-show="post.text.length" ng-init="text = (post.text | readMore); show=false">
-           <span ng-bind-html-unsafe="text[0]"></span>
-           <a ng-show="text[1] && ! show" ng-click="show=true" class="read-more">Читать далее</a>
-           <span ng-show="show" ng-bind-html-unsafe="text[1]"></span>
-        </div>
+      <div class="post-inner" bind-links>
+         <div class="text" ng-show="post.text.length" ng-init="text = (post.text | readMore); show=0; showedMore=0">
+            <span ng-bind-html="text[0]"></span>
+            <a ng-show="text[1] && ! show" ng-click="show=1" class="read-more">Читать далее</a>
+            <span ng-if="show" ng-bind-html="text[1]"></span>
+         </div>
 
-       <div ng-repeat="photo in post.photos" class="image-container">
-          <span class="zoom" ng-click="zoomImage(photo.big)"></span>
-          <img ng-src="{{ getPhoto(photo) }}" class="image">
-       </div>
+         <div ng-if="post.photos">
+            <div ng-repeat="photo in post.photos" class="image-container">
+               <div class="image-wrap">
+                  <img ng-src="{{ getPhoto(photo) }}" class="image">
+                  <span class="zoom" ng-click="zoomImage(photo.big)"></span>
+               </div>
+            </div>
 
-       <div ng-repeat="gif in post.gifs" class="image-container">
-          <span class="gif" ng-click="openGif($event)">Загрузка...</span>
-          <img ng-src="{{ gif.preview }}"
-               data-url="{{ gif.url }}"
-               ng-click="openGif($event, true)"
-               data-preview="{{ gif.preview }}"
-               data-opened="false"
-               class="image gif-image">
-       </div>
+            <div ng-show="(!showedMore && post.photosMore)"
+                 ng-bind="post.photosMore.length | showMore"
+                 ng-click="showedMore=1"
+                 class="show-more">
+            </div>
 
-      <a ng-show="post.links[0]" ng-href="{{ post.links[0].url }}" ng-bind="post.links[0].title" class="single-link"></a>
+            <div ng-if="showedMore" ng-repeat="photo in post.photosMore" class="image-container">
+               <div class="image-wrap">
+                  <img ng-src="{{ getPhoto(photo) }}" class="image">
+                  <span class="zoom" ng-click="zoomImage(photo.big)"></span>
+               </div>
+            </div>
+         </div>
 
-     </div>
+         <div ng-if="post.gifs" class="gifs">
+            <div class="gif" ng-repeat="gif in post.gifs" ng-click="gif.preview=gif.url">
+               <img ng-src="{{ gif.preview }}">
+               <div class="play"><i class="icon-play"></i></div>
+            </div>
+         </div>
 
-     <div class="meta">
-        <table>
-           <tr>
-              <td class="avatar-td">
+         <a ng-if="post.links[0]" ng-href="{{ post.links[0].url }}" ng-bind="post.links[0].title" class="single-link"></a>
+
+      </div>
+
+      <div class="meta">
+         <table>
+            <tr>
+               <td class="avatar-td">
                   <img ng-src="{{post.groupAvatar}}">
-              </td>
-              <td class="name-td">
+               </td>
+               <td class="name-td">
                   <div class="group" ng-bind="post.group"></div>
                   <div am-time-ago="post.date" class="time"></div>
-              </td>
-              <td class="like-td">
-                 <span hm-tap="like(post.id)" class="like" ng-class="{active: isLiked(post.id)}"></span>
-              </td>
-           </tr>
-        </table>
-     </div>
-  </div>
+               </td>
+               <td class="like-td">
+                  <span ng-click="like(post.id)" class="like" ng-class="{active: isLiked(post.id)}"></span>
+               </td>
+            </tr>
+         </table>
+      </div>
+   </div>
 
-  <div ng-show="loading" class="loading">Загрузка контента <span class="icon-spin4 animate-spin"></span></div>
+   <div ng-show="loading" class="loading">Загрузка контента <span class="icon-spin4 animate-spin"></span></div>
 </div>
 
 <div ng-controller="ZoomController">
-  <div id="zoom" ng-show="zoomOpened">
-     <div class="overlay" hm-tap="close()"></div>
-     <div class="image" id="zoom-wrap" hm-tap="close()">
-        <img ng-src="{{image}}" id="zoom-image" hm-tap="close()">
-     </div>
-  </div>
-  </div>
+   <div id="zoom" ng-show="zoomOpened">
+      <div class="overlay" ng-click="close()"></div>
+      <div class="image" id="zoom-wrap" ng-click="close()">
+         <img ng-src="{{image}}" id="zoom-image" ng-click="close()">
+      </div>
+   </div>
+</div>

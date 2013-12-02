@@ -140,6 +140,7 @@ table {
 }
 .menu-container .submenu-container.opened {
   height: auto;
+  padding-bottom: 10pt;
   -webkit-transform: scaleY(1);
   -ms-transform: scaleY(1);
   -o-transform: scaleY(1);
@@ -209,7 +210,7 @@ table {
 }
 #posts .post {
   max-width: 100%;
-  margin: 9pt 5pt;
+  margin: 8pt 4pt;
   padding: 0;
   font-size: 0pt;
   box-shadow: 0pt 0pt 1px rgba(0, 0, 0, 0.3);
@@ -256,6 +257,16 @@ table {
 #posts .post-inner .text .read-more:active {
   background: rgba(53, 93, 153, 0.1);
 }
+#posts .post-inner .show-more {
+  background: url(../images/srtipes.png?6);
+  font-size: 11.5pt;
+  padding: 6pt 0;
+  text-align: center;
+  color: #5E6471;
+}
+#posts .post-inner .show-more:active {
+  background: rgba(118, 118, 118, 0.1);
+}
 #posts .post-inner .single-link {
   margin: 0 0 2pt;
   font-size: 10pt;
@@ -276,20 +287,53 @@ table {
 #posts .post-inner .single-link:active {
   background: rgba(53, 93, 153, 0.1);
 }
-#posts .post-inner .image-container {
-  position: relative;
+#posts .post-inner .gifs {
   text-align: center;
-  margin-bottom: 2pt;
+}
+#posts .post-inner .gif {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+}
+#posts .post-inner .gif img {
+  width: 100%;
+}
+#posts .post-inner .gif img[src$=".jpg"] {
+  width: 160pt;
+  height: 100pt;
+  margin: 3pt;
+}
+#posts .post-inner .gif img[src$=".jpg"] + .play {
+  font-size: 30pt;
+  position: absolute;
+  width: 30pt;
+  height: 30pt;
+  top: 50%;
+  left: 50%;
+  margin-left: -15pt;
+  margin-top: -15pt;
+  color: rgba(255, 255, 255, 0.7);
+}
+#posts .post-inner .image-container {
+  text-align: center;
+  border-top: 2px solid #fff;
+}
+#posts .post-inner .image-container:first-of-type {
+  border-top: 0;
+}
+#posts .post-inner .image-container .image-wrap {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
 }
 #posts .post-inner .image-container .zoom {
   font-size: 14pt;
   position: absolute;
-  right: -2pt;
-  top: -3pt;
+  right: 0;
+  top: 0;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-  z-index: 3;
-  padding: 10pt;
+  padding: 8pt 10pt 12pt 12pt;
 }
 #posts .post-inner .image-container .zoom:before {
   content: '\e802';
@@ -300,49 +344,6 @@ table {
 }
 #posts .post-inner .image-container .zoom:active {
   color: #E13004;
-}
-#posts .post-inner .image-container .gif {
-  color: #333344;
-  position: absolute;
-  right: 50%;
-  top: 50%;
-  z-index: 3;
-  font-size: 0 !important;
-}
-#posts .post-inner .image-container .gif:before {
-  content: '\e80d';
-  font-family: "fontello";
-  display: inline-block;
-  text-align: center;
-  line-height: 1em;
-}
-#posts .post-inner .image-container .gif:before {
-  color: rgba(255, 255, 255, 0.8);
-  display: inline-block;
-  font-size: 20pt !important;
-  line-height: 40pt;
-  margin-right: -20pt;
-  margin-top: -20pt;
-  width: 35pt;
-  padding-left: 5pt;
-  background: rgba(0, 0, 0, 0.35);
-  border-radius: 100%;
-}
-#posts .post-inner .image-container .gif.loading {
-  font-size: 15pt !important;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.6);
-  width: 70pt;
-  height: 30pt;
-  margin: -20pt -35pt 0 0;
-  line-height: 30pt;
-  display: inline-block;
-  text-align: center;
-}
-#posts .post-inner .image-container .gif.loading:before,
-#posts .post-inner .image-container .gif.loaded:before {
-  display: none;
 }
 #posts .post-inner .image-container .image {
   max-width: 100%;

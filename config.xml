@@ -2,8 +2,8 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "ru.surfo.app"
-        versionCode="18"
-        version   = "2.7.0">
+        versionCode="19"
+        version   = "2.8.0">
 
     <name>Surfo</name>
 
@@ -13,9 +13,7 @@
         Evgeny Nikiforov
     </author>
 
-    <gap:platform name="ios" />
     <gap:platform name="android" />
-    <gap:platform name="winphone" />
 
     <preference name="phonegap-version" value="2.9.0" />
     <preference name="target-device" value="universal" />
