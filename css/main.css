@@ -237,7 +237,7 @@ table {
   display: inline-block;
 }
 #posts .post-inner .text .link:before {
-  content: '\e80c';
+  content: '\e804';
   font-family: "fontello";
   display: inline-block;
   text-align: center;
@@ -274,7 +274,7 @@ table {
   display: block;
 }
 #posts .post-inner .single-link:before {
-  content: '\e80c';
+  content: '\e804';
   font-family: "fontello";
   display: inline-block;
   text-align: center;
@@ -357,6 +357,40 @@ table {
 #posts .meta {
   font-size: 10pt;
 }
+#posts .meta .share-wrap {
+  position: relative;
+  text-align: center;
+  font-size: 0;
+}
+#posts .meta .share-buttons {
+  background: #FFFFFF;
+  border-radius: 4px;
+  bottom: 4pt;
+  border: 2pt solid #9494af;
+  height: 30pt;
+  right: 3pt;
+  line-height: 30pt;
+  position: absolute;
+  width: 104pt;
+}
+#posts .meta .share-buttons i {
+  font-size: 21pt;
+}
+#posts .meta .share-buttons i:before {
+  padding: 0 2pt;
+}
+#posts .meta .share-buttons i:active {
+  background: #eee;
+}
+#posts .meta .share-buttons .icon-vkontakte {
+  color: #527498;
+}
+#posts .meta .share-buttons .icon-facebook {
+  color: #325E9B;
+}
+#posts .meta .share-buttons .icon-twitter {
+  color: #33AEE8;
+}
 #posts .meta td {
   padding: 2pt 0 2pt;
 }
@@ -367,8 +401,8 @@ table {
 #posts .meta .like-td .like {
   position: relative;
   z-index: 5;
-  margin: -15pt -16pt -16pt -10pt;
-  padding: 15pt 15pt 15pt 9pt;
+  margin: -10pt -11pt -11pt -10pt;
+  padding: 10pt 10pt 10pt 9pt;
   display: inline-block;
   font-size: 18pt;
   line-height: 18pt;
@@ -396,41 +430,11 @@ table {
   width: 35pt;
   text-align: center;
 }
-#posts .meta .share-td .share-wrap {
-  position: relative;
-}
-#posts .meta .share-td .share-buttons {
-  background: #FFFFFF;
-  border-radius: 4px;
-  bottom: 135%;
-  border: 2pt solid #9494af;
-  font-size: 18pt;
-  height: 28pt;
-  left: -29pt;
-  line-height: 28pt;
-  position: absolute;
-  width: 92pt;
-}
-#posts .meta .share-td .share-buttons i {
-  margin: 0;
-}
-#posts .meta .share-td .share-buttons i:active {
-  background: #eee;
-}
-#posts .meta .share-td .share-buttons .icon-vkontakte {
-  color: #527498;
-}
-#posts .meta .share-td .share-buttons .icon-facebook {
-  color: #325E9B;
-}
-#posts .meta .share-td .share-buttons .icon-twitter {
-  color: #33AEE8;
-}
 #posts .meta .share-td .share {
   position: relative;
   z-index: 5;
-  margin: -15pt -10pt -16pt -16pt;
-  padding: 15pt 9pt 15pt 15pt;
+  margin: -10pt -10pt -11pt -11pt;
+  padding: 10pt 9pt 10pt 10pt;
   display: inline-block;
   font-size: 18pt;
   line-height: 18pt;

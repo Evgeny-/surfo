@@ -55,6 +55,15 @@
       </div>
 
       <div class="meta" ng-init="share=false">
+
+         <div class="share-wrap">
+            <div ng-show="share" class="share-buttons">
+               <i ng-click="sharePost(post.id, 'vk')" class="icon-vkontakte"></i>
+               <i ng-click="sharePost(post.id, 'fb')" class="icon-facebook"></i>
+               <i ng-click="sharePost(post.id, 'tw')" class="icon-twitter"></i>
+            </div>
+         </div>
+
          <table>
             <tr>
                <td class="avatar-td">
@@ -65,14 +74,7 @@
                   <div am-time-ago="post.date" class="time"></div>
                </td>
                <td class="share-td">
-                  <div class="share-wrap">
-                     <div ng-if="share" class="share-buttons">
-                        <i ng-click="sharePost(post.id, 'vk')" class="icon-vkontakte"></i>
-                        <i ng-click="sharePost(post.id, 'fb')" class="icon-facebook"></i>
-                        <i ng-click="sharePost(post.id, 'tw')" class="icon-twitter"></i>
-                     </div>
-                     <span ng-click="share=!share" class="share"></span>
-                  </div>
+                  <span ng-click="share=!share" class="share"></span>
                </td>
                <td class="like-td">
                   <span ng-click="like(post.id)" class="like" ng-class="{active: isLiked(post.id)}"></span>
