@@ -1,7 +1,7 @@
 body {
   max-width: 700pt;
   margin: 0 auto;
-  font-family: "Open Sans", 'Roboto', Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-size: 15pt;
   color: #333344;
   background: #c9d5d7;
@@ -336,7 +336,7 @@ table {
   padding: 8pt 10pt 12pt 12pt;
 }
 #posts .post-inner .image-container .zoom:before {
-  content: '\e802';
+  content: '\e805';
   font-family: "fontello";
   display: inline-block;
   text-align: center;
@@ -361,21 +361,21 @@ table {
   padding: 2pt 0 2pt;
 }
 #posts .meta .like-td {
-  width: 30pt;
+  width: 35pt;
   text-align: center;
 }
 #posts .meta .like-td .like {
   position: relative;
   z-index: 5;
-  margin: -15pt -32pt;
-  padding: 15pt;
+  margin: -15pt -16pt -16pt -10pt;
+  padding: 15pt 15pt 15pt 9pt;
   display: inline-block;
   font-size: 18pt;
   line-height: 18pt;
   color: #9494af;
 }
 #posts .meta .like-td .like:before {
-  content: '\e809';
+  content: '\e801';
   font-family: "fontello";
   display: inline-block;
   text-align: center;
@@ -386,11 +386,66 @@ table {
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
 #posts .meta .like-td .like.active:before {
-  content: '\e80b';
+  content: '\e802';
   font-family: "fontello";
   display: inline-block;
   text-align: center;
   line-height: 1em;
+}
+#posts .meta .share-td {
+  width: 35pt;
+  text-align: center;
+}
+#posts .meta .share-td .share-wrap {
+  position: relative;
+}
+#posts .meta .share-td .share-buttons {
+  background: #FFFFFF;
+  border-radius: 4px;
+  bottom: 135%;
+  border: 2pt solid #9494af;
+  font-size: 18pt;
+  height: 28pt;
+  left: -29pt;
+  line-height: 28pt;
+  position: absolute;
+  width: 92pt;
+}
+#posts .meta .share-td .share-buttons i {
+  margin: 0;
+}
+#posts .meta .share-td .share-buttons i:active {
+  background: #eee;
+}
+#posts .meta .share-td .share-buttons .icon-vkontakte {
+  color: #527498;
+}
+#posts .meta .share-td .share-buttons .icon-facebook {
+  color: #325E9B;
+}
+#posts .meta .share-td .share-buttons .icon-twitter {
+  color: #33AEE8;
+}
+#posts .meta .share-td .share {
+  position: relative;
+  z-index: 5;
+  margin: -15pt -10pt -16pt -16pt;
+  padding: 15pt 9pt 15pt 15pt;
+  display: inline-block;
+  font-size: 18pt;
+  line-height: 18pt;
+  color: #9494af;
+}
+#posts .meta .share-td .share:before {
+  content: '\e809';
+  font-family: "fontello";
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
+}
+#posts .meta .share-td .share:active {
+  color: #ff1802;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
 #posts .meta .avatar-td {
   padding-top: 3pt;
