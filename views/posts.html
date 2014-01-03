@@ -25,7 +25,8 @@
             <div ng-repeat="photo in post.photos" class="image-container">
                <div class="image-wrap">
                   <img ng-src="{{ getPhoto(photo) }}" class="image">
-                  <span class="zoom" ng-click="zoomImage(photo.big)"></span>
+                  <span class="zoom image-icon" ng-click="zoomImage(photo.big)"></span>
+                  <span class="save image-icon" ng-click="saveImage(photo.big)"></span>
                </div>
             </div>
 

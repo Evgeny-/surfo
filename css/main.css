@@ -326,7 +326,7 @@ table {
   position: relative;
   max-width: 100%;
 }
-#posts .post-inner .image-container .zoom {
+#posts .post-inner .image-container .image-icon {
   font-size: 14pt;
   position: absolute;
   right: 0;
@@ -335,6 +335,9 @@ table {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   padding: 8pt 10pt 12pt 12pt;
 }
+#posts .post-inner .image-container .image-icon:active {
+  color: #E13004;
+}
 #posts .post-inner .image-container .zoom:before {
   content: '\e805';
   font-family: "fontello";
@@ -342,8 +345,16 @@ table {
   text-align: center;
   line-height: 1em;
 }
-#posts .post-inner .image-container .zoom:active {
-  color: #E13004;
+#posts .post-inner .image-container .save {
+  left: 0pt;
+  right: auto;
+}
+#posts .post-inner .image-container .save:before {
+  content: '\e80e';
+  font-family: "fontello";
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
 }
 #posts .post-inner .image-container .image {
   max-width: 100%;
