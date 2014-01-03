@@ -2,14 +2,14 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "ru.surfo.app"
-        versionCode="26"
-        version   = "2.9.6">
+        versionCode="27"
+        version   = "2.9.7">
 
     <name>Surfo</name>
 
     <description></description>
 
-    <author email="likechokolit@gmail.com">
+    <author href="http://surfo.ru" email="likechokolit@gmail.com">
         Evgeny Nikiforov
     </author>
 
@@ -24,6 +24,10 @@
 
     <feature name="http://api.phonegap.com/1.0/device" />    
     <feature name="http://api.phonegap.com/1.0/network" />
+    <feature name="http://api.phonegap.com/1.0/file"/>
+
+    <access origin="*" />
+
     <plugin name="InAppBrowser" value="CDVInAppBrowser" />
     <plugin name="File" value="org.apache.cordova.FileUtils" />
     <plugin name="FileTransfer" value="org.apache.cordova.FileTransfer" />
