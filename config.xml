@@ -2,8 +2,8 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "ru.surfo.app"
-        versionCode="21"
-        version   = "2.9.1">
+        versionCode="22"
+        version   = "2.9.2">
 
     <name>Surfo</name>
 
