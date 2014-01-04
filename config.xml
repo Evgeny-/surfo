@@ -14,6 +14,7 @@
     </author>
 
     <gap:platform name="android" />
+    <gap:platform name="winphone" />
 
     <preference name="phonegap-version" value="2.9.0" />
     <preference name="target-device" value="universal" />
