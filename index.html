@@ -1,21 +1,18 @@
 <!doctype html>
-<html lang="ru-RU" ng-app="App">
+<html lang="ru-RU" ng-app="App" ng-class="{zoomed: zoomOpened}">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-   <meta name="appsfuel_code" content="b8f7176fd5e6dde"/>
    <title>Surfo</title>
-   <link rel="stylesheet" href="css/icons.css"/>
-   <link rel="stylesheet" href="css/fontello.css"/>
-   <link rel="stylesheet" href="css/main.css"/>
-
+   <link rel="stylesheet" href="build/build.css"/>
 </head>
 
-<body ng-class="{zoom: zoomOpened, tablet: isTablet}">
+<body>
 
 <div id="view" ng-view></div>
+<div class="check-tablet"></div>
 
-<script src="js/build.min.js?5"></script>
+<script src="build/build.js"></script>
 <script src="cordova.js"></script>
 
 </body>

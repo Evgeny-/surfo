@@ -2,8 +2,8 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "ru.surfo.app"
-        versionCode="31"
-        version   = "3.1.0">
+        versionCode="32"
+        version   = "4.0.0">
 
     <name>Surfo</name>
 
@@ -18,10 +18,12 @@
 
     <preference name="phonegap-version" value="2.9.0" />
     <preference name="target-device" value="universal" />
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-minSdkVersion" value="10" />
 
-    <icon src="icons/256.png" with="256" height="256" />
-    <icon src="icons/128.png" with="128" height="128" />
+    <icon src="icons/drawable-ldpi/ic_menu__logo-wave.png" gap:platform="android" gap:density="ldpi" />
+    <icon src="icons/drawable-mdpi/ic_menu__logo-wave.png" gap:platform="android" gap:density="mdpi" />
+    <icon src="icons/drawable-hdpi/ic_menu__logo-wave.png" gap:platform="android" gap:density="hdpi" />
+    <icon src="icons/drawable-xhdpi/ic_menu__logo-wave.png" gap:platform="android" gap:density="xhdpi" />
 
     <feature name="http://api.phonegap.com/1.0/device" />    
     <feature name="http://api.phonegap.com/1.0/network" />
