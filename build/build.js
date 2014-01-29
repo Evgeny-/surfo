@@ -3874,6 +3874,22 @@ function ngViewFillContentFactory($compile, $controller, $route) {
     };
   });
 
+  App.directive('gif', [
+    '$parse', function($parse) {
+      return function(scope, el, attr) {
+        var gif, statePreview;
+        gif = $parse(attr.gif)(scope);
+        el = el[0];
+        el.setAttribute('src', gif.preview);
+        statePreview = true;
+        return Hammer(el).on('tap', function() {
+          el.setAttribute('src', statePreview ? gif.url : gif.preview);
+          return statePreview = !statePreview;
+        });
+      };
+    }
+  ]);
+
   App.directive('like', [
     '$parse', 'Like', function($parse, Like) {
       var classes, dislike, like;
@@ -4409,9 +4425,7 @@ angular.module('App').run(['$templateCache', function($templateCache) {
     "                    ng-show=\"!showedAll\">Показать все изображения</div>\n" +
     "            </div>\n" +
     "            <div class=\"animation-container\" bo-if=\"post.gifs.length\" bo-class=\"{few:post.gifs.length>1}\">\n" +
-    "               <img ng-repeat=\"(k, gif) in post.gifs\"\n" +
-    "                    hm-tap=\"gif.preview=gif.url\"\n" +
-    "                    ng-src=\"{{gif.preview}}\">\n" +
+    "               <img ng-repeat=\"(k, gif) in post.gifs\" gif=\"gif\">\n" +
     "            </div>\n" +
     "\n" +
     "            <a bo-if=\"post.links.length\"\n" +

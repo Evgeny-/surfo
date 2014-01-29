@@ -20,10 +20,7 @@
     <preference name="target-device" value="universal" />
     <preference name="android-minSdkVersion" value="10" />
 
-    <icon src="icons/drawable-ldpi/ic_menu__logo-wave.png" gap:platform="android" gap:density="ldpi" />
-    <icon src="icons/drawable-mdpi/ic_menu__logo-wave.png" gap:platform="android" gap:density="mdpi" />
-    <icon src="icons/drawable-hdpi/ic_menu__logo-wave.png" gap:platform="android" gap:density="hdpi" />
-    <icon src="icons/drawable-xhdpi/ic_menu__logo-wave.png" gap:platform="android" gap:density="xhdpi" />
+    <icon src="icons/512.png" width="512" height="512" />
 
     <feature name="http://api.phonegap.com/1.0/device" />    
     <feature name="http://api.phonegap.com/1.0/network" />

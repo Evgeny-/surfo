@@ -680,9 +680,9 @@ html {
   overflow-x: hidden;
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', 'Arial', 'Tahoma', sans-serif;
+  font-family: 'Roboto', 'Open Sans', 'Arial', 'Tahoma', sans-serif;
   font-size: 11pt;
-  background: #E7E7E7;
+  background: #EBE9DE;
   color: #222;
 }
 @media (min-width: 300pt) {
@@ -819,7 +819,7 @@ a:active {
 }
 #category .post {
   padding: 0 6pt 6pt;
-  margin: 8pt 5pt;
+  margin: 9pt 6pt;
   background: #fff;
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
@@ -869,26 +869,27 @@ a:active {
   text-align: center;
 }
 #category .post .animation-container img {
-  width: 80%;
+  min-width: 80%;
+  max-width: 100%;
   margin-bottom: 3pt;
   border-radius: 3pt;
-  -webkit-transition: width .3s ease;
-  -moz-transition: width .3s ease;
-  -ie-transition: width .3s ease;
-  -o-transition: width .3s ease;
-  transition: width .3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ie-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
 }
 #category .post .animation-container img[src$=".jpg"] {
-  width: 60%;
-}
-#category .post .animation-container img[src$=".jpg"]:active {
-  opacity: 0.8;
+  min-width: 60%;
+  max-width: 60%;
 }
 #category .post .animation-container.few img {
-  width: 80%;
+  min-width: 80%;
+  max-width: 100%;
 }
 #category .post .animation-container.few img[src$=".jpg"] {
-  width: 48%;
+  max-width: 48%;
+  min-width: 48%;
   margin: 1%;
 }
 #category .post .main-link {
