@@ -431,7 +431,10 @@ table {
     vertical-align: top;
     display: inline-block;
     width: 34%;
-    float: left;
+    position: fixed;
+    top: 48pt;
+    left: 0;
+    overflow-y: auto;
   }
   #category .tablet-menu #menu {
     padding: 8pt 2pt 8pt 6pt;
@@ -440,6 +443,7 @@ table {
     font-size: 13pt;
     display: inline-block;
     width: 66%;
+    margin-left: 34%;
   }
 }
 
@@ -528,6 +532,11 @@ table {
   width: 100%;
   text-align: center;
   color: #fff;
+  -webkit-transition: background .3s ease;
+  -moz-transition: background .3s ease;
+  -ie-transition: background .3s ease;
+  -o-transition: background .3s ease;
+  transition: background .3s ease;
 }
 #category .header > div {
   display: table-cell;
@@ -691,6 +700,12 @@ html {
     font-size: 12pt;
   }
 }
+@media (min-width: 440pt) {
+  body,
+  html {
+    background: #DAD8CD;
+  }
+}
 .check-tablet {
   display: none;
 }
@@ -770,11 +785,13 @@ a:active {
 }
 @media (min-width: 440pt) {
   #menu .button-container {
-    margin-bottom: 2pt;
+    margin-bottom: 3pt;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
   }
   #menu .button {
     font-size: 12pt;
-    padding: 4pt 0;
+    padding: 3pt 0;
   }
   #menu .button .icon {
     font-size: 30pt;
@@ -792,7 +809,7 @@ a:active {
 }
 @media (min-width: 550pt) {
   #menu .button-container {
-    margin-bottom: 3pt;
+    margin-bottom: 4pt;
   }
   #menu .button {
     font-size: 14pt;
