@@ -691,7 +691,7 @@ html {
   margin: 0;
   font-family: 'Roboto', 'Open Sans', 'Arial', 'Tahoma', sans-serif;
   font-size: 11pt;
-  background: #EBE9DE;
+  background: #fafafa;
   color: #222;
 }
 @media (min-width: 300pt) {
