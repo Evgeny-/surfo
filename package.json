@@ -1,0 +1,11 @@
+{
+    "name": "surfo",
+    "dependencies": {
+        "grunt-contrib-concat": "*",
+        "grunt-contrib-coffee": "*",
+        "assemble-less": "*",
+        "grunt-contrib-watch": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-angular-templates": "*"
+    }
+}

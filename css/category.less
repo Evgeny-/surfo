@@ -1,0 +1,38 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+
+#category {
+   .tablet-menu {
+      display: none;
+   }
+
+   @media (min-width: @tablet)  {
+      .content {
+         display: block;
+         vertical-align: top;
+         font-size: 0;
+      }
+
+      .tablet-menu {
+         font-size: 13pt;
+         vertical-align: top;
+         display: inline-block;
+         width: 34%;
+         position: fixed;
+         top: 48pt;
+         left: 0;
+         overflow-y: auto;
+
+         #menu {
+            padding: 8pt 2pt 8pt 6pt;
+         }
+      }
+
+      .posts {
+         font-size: 13pt;
+         display: inline-block;
+         width: 66%;
+         margin-left: 34%;
+      }
+   }
+}

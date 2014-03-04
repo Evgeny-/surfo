@@ -1,0 +1,64 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+
+#share {
+   position: fixed;
+   top:0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+
+   .background {
+      height: 100%;
+      width: 100%;
+      background: rgba(80,80,80,.9);
+   }
+
+   .menu {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 160pt;
+      height: 120pt;
+      list-style: none;
+      padding: 0;
+      margin: -60pt 0 0 -80pt;
+
+      li {
+         font-size: 12pt;
+         border-radius: 2pt;
+         background: rgba(30,30,30,.7);
+         height: 34pt;
+         line-height: 34pt;
+         padding: 0 10pt;
+         margin: 3pt 0;
+         color: #ddd;
+
+         &:active {
+            background: rgba(0,0,0,.8);
+         }
+
+         span {
+            vertical-align: middle;
+            font-size: 16pt;
+            margin-right: 5pt;
+         }
+      }
+
+      @media (min-width: @miniTablet)  {
+         width: 200pt;
+         height: 150pt;
+         margin: -75pt 0 0 -100pt;
+
+         li {
+            height: 44pt;
+            line-height: 44pt;
+            font-size: 13pt;
+
+            span {
+               font-size: 18pt;
+            }
+         }
+      }
+   }
+}

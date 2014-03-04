@@ -1,0 +1,21 @@
+<div ng-controller="MenuController" id="menu">
+   <div class="button-container" bindonce ng-repeat="el in menu" bo-style="{background:el.colors}">
+      <div class="button" hm-tap="show(el.id)">
+         <span class="icon" bo-class="'menu-icon-'+el.icon"></span>
+         <span bo-text="el.name"></span>
+      </div>
+
+      <div class="submenu" ng-class="{showed: el.id === showed}">
+         <div bindonce ng-repeat="sel in el.submenu" bo-text="sel.name" hm-tap="openCategory(sel.id)"></div>
+      </div>
+   </div>
+
+   <div class="button-container favorite">
+      <div class="button favorite" hm-tap="openCategory('favorite')">
+         <span class="icon menu-icon-fav"></span>
+         <span>Избранное</span>
+      </div>
+   </div>
+</div>
+
+

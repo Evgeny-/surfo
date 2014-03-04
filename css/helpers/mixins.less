@@ -1,0 +1,65 @@
+
+.linear-gradient (@color1:#ccc, @color2:#fff, @stop1:0, @stop2:100%, @dir:top) {
+   background-color: @color2;
+   background: -webkit-linear-gradient(@dir, @color1 @stop1, @color2 @stop2);
+   background: -moz-linear-gradient(@dir, @color1 @stop1, @color2 @stop2);
+   background: -o-linear-gradient(@dir, @color1 @stop1, @color2 @stop2);
+   background: linear-gradient(@dir, @color1 @stop1, @color2 @stop2);
+}
+
+.transition (@ms: 300ms, @type: linear, @for: all) {
+   -webkit-transition: @ms @type @for;
+   -moz-transition: @ms @type @for;
+   transition: @ms @type @for;
+}
+
+.transform-origin(@where: top) {
+   -webkit-transform-origin: @where;
+   -ms-transform-origin: @where;
+   -o-transform-origin: @where;
+   transform-origin: @where;
+}
+
+.scaleY (@num) {
+   -webkit-transform: scaleY(@num);
+   -ms-transform: scaleY(@num);
+   -o-transform: scaleY(@num);
+   transform: scaleY(@num);
+}
+
+.transition-transform (@time: 0.3s, @type: linear) {
+   -webkit-transition: -webkit-transform @time @type;
+   -ms-transition: -ms-transform @time @type;
+   -o-transition: -o-transform @time @type;
+   transition: transform @time @type;
+}
+
+.transform (@t) {
+   -webkit-transform: @t;
+   -ms-transform: @t;
+   -o-transform: @t;
+   transform: @t;
+}
+
+
+.animation-height () {
+   .scaleY(0);
+   .transform-origin(top);
+   .transition-transform(0.2s, linear);
+}
+
+.gpu () {
+   -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   transform: translateZ(0);
+}
+
+.font-icon (@content) {
+   &:before {
+      content: @content;
+      font-family: "fontello";
+      display: inline-block;
+      text-align: center;
+      line-height: 1em;
+   }
+}

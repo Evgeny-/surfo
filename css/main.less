@@ -1,0 +1,48 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide {
+   display: none !important;
+}
+
+body, html {
+   overflow-x: hidden;
+   padding: 0;
+   margin: 0;
+   font-family: 'Roboto', 'Open Sans', 'Arial', 'Tahoma', sans-serif;
+   font-size: 11pt;
+   background: #fafafa;//#EBE9DE;
+   color: #222;
+
+   @media (min-width: @miniTablet)  {
+      font-size: 12pt;
+   }
+
+   @media (min-width: @tablet) {
+      background: #DAD8CD;
+   }
+}
+
+.check-tablet {
+   display: none;
+}
+
+@media (min-width: @tablet)  {
+   .check-tablet {
+      display: block;
+      width: 72pt;
+   }
+}
+* {
+   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+   -webkit-tap-highlight-color: transparent;
+}
+
+a {
+   color: #355D99;
+   text-decoration: underline;
+
+   &:active {
+      color: red;
+   }
+}

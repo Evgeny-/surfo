@@ -1,0 +1,92 @@
+<div id="category" ng-controller="CategoryController" menu-tablet-size>
+   <div class="header" ng-style="{background:menu.colors}" ng-controller="HeaderController">
+      <div class="icon back" hm-tap="back()">
+         <span class="icon-angle-left"></span>
+      </div>
+      <div class="name" ng-bind="menu.name"></div>
+      <div class="icon top" hm-tap="top()">
+         <span class="icon-angle-up"></span>
+      </div>
+   </div>
+
+   <div class="header-push"></div>
+
+   <div class="content" ng-controller="PostsController">
+      <div class="tablet-menu" ng-if="TABLET" ng-include="'views/menu.html'"></div>
+      <div class="posts">
+         <div class="empty-res" ng-if="isFav && !posts.length">
+            Вы еще не добавили ни одного поста в Избранное!
+         </div>
+         <div class="post" bindonce bindlinks ng-repeat="post in posts">
+            <div class="text-container" bo-if="post.text" ng-init="text=readMore(post.text)">
+               <span ng-bind-html="text.first"></span>
+               <div class="read-more" ng-click="text.first=text.all" ng-if="text.all!=text.first">Читать далее</div>
+            </div>
+            <div class="photos-container" bo-if="post.photos.length" ng-init="showedAll=(post.photos.length<2)">
+               <img ng-repeat="(k, photo) in post.photos"
+                    ng-if="k == 0 || showedAll"
+                    hm-tap="openImage(photo.big)"
+                    bo-src="photo.small">
+
+               <div ng-click="showedAll=1"
+                    class="show-more"
+                    ng-show="!showedAll">Показать все изображения</div>
+            </div>
+            <div class="animation-container" bo-if="post.gifs.length" bo-class="{few:post.gifs.length>1}">
+               <img ng-repeat="(k, gif) in post.gifs" gif="gif">
+            </div>
+            <a bo-if="post.links.length"
+                 class="main-link"
+                 bo-href="post.links[0].url"
+                 bo-text="post.links[0].title"></a>
+            <div class="group-container">
+               <div class="avatar">
+                  <img bo-src="post.group.avatar">
+               </div>
+               <div class="name">
+                  <div class="title" bo-text="post.group.name"></div>
+                  <div class="date" bo-text="post.date | dateago"></div>
+               </div>
+               <div class="icon share" hm-tap="share(post.id)">
+                  <span class="icon-share-1"></span>
+               </div>
+               <div class="icon like">
+                  <like post="post"></like>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div id="zoom" ng-controller="ZoomController" ng-show="opened" emule-fixed>
+      <div class="header">
+         <div class="icon download" hm-tap="download()">
+            <span class="icon-download-1"></span>
+         </div>
+         <div class="name">Изображение</div>
+         <div class="icon close" hm-tap="close()">
+            <span class="icon-cancel-1"></span>
+         </div>
+      </div>
+      <div class="content">
+         <div id="image-wrap">
+            <img ng-src="{{ image }}">
+         </div>
+      </div>
+   </div>
+
+   <div id="share" ng-controller="ShareController" ng-show="opened">
+      <div class="background" hm-tap="close()"></div>
+      <ul class="menu">
+         <li hm-tap="share('vk')">
+            <span class="icon-vkontakte"></span> Вконтакте
+         </li>
+         <li hm-tap="share('fb')">
+            <span class="icon-facebook"></span> Фейсбук
+         </li>
+         <li hm-tap="share('tw')">
+            <span class="icon-twitter"></span> Твиттер
+         </li>
+      </ul>
+   </div>
+</div>

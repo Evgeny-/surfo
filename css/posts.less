@@ -1,0 +1,200 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+
+#category {
+   .empty-res {
+      margin: 15pt;
+      text-align: center;
+   }
+   .post {
+      padding: 0 6pt 6pt;
+      margin: 9pt 6pt;
+      background: #fff;
+      -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+
+      .text-container {
+         padding: 6pt 0;
+         overflow: hidden;
+
+         span {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+         }
+      }
+
+      .photos-container {
+         font-size: 0;
+         margin: 0 -6pt;
+         padding-bottom: 5pt;
+
+         img {
+            width: 100%;
+            margin-bottom: 2pt;
+         }
+      }
+
+      .show-more, .read-more {
+         text-align: center;
+         padding: 5pt 0;
+         margin: 4pt 6pt 2pt;
+         border: 1px solid #CDCDCD;
+         font-size: 11pt;
+
+         &:active {
+            background: #eee;
+         }
+
+         @media (min-width: @miniTablet)  {
+            margin: 6pt 6pt 3pt;
+            font-size: 12pt;
+         }
+      }
+
+      .read-more {
+         margin: 4pt 0 1pt;
+      }
+
+      .animation-container {
+         margin: 0 -6pt;
+         padding: 6pt 0;
+         text-align: center;
+
+         img {
+            min-width: 80%;
+            max-width: 100%;
+            margin-bottom: 3pt;
+            border-radius: 3pt;
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -ie-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+
+            &[src$=".jpg"] {
+               min-width: 60%;
+               max-width: 60%;
+            }
+         }
+
+         &.few {
+            img {
+               min-width: 80%;
+               max-width: 100%;
+
+               &[src$=".jpg"] {
+                  max-width: 48%;
+                  min-width: 48%;
+                  margin: 1%;
+               }
+            }
+         }
+      }
+
+      .main-link {
+         display: inline-block;
+         overflow: hidden;
+         max-width: 100%;
+         white-space: nowrap;
+         text-overflow: ellipsis;
+         margin-bottom: 6pt;
+         margin-top: 2pt;
+         text-decoration: none;
+
+         &:before {
+            content: '\e800';
+            padding-right: 4pt;
+            text-decoration: none;
+            font-family: "fontello";
+            font-size: 10pt;
+         }
+      }
+
+      .group-container {
+         display: table;
+         width: 100%;
+         max-width: 100%;
+
+         > div {
+            display: table-cell;
+            vertical-align: middle;
+         }
+
+         .avatar {
+            width: 28pt;
+            font-size: 0;
+
+            img {
+               width: 23pt;
+               height: 23pt;
+            }
+
+            @media (min-width: @miniTablet)  {
+               width: 30pt;
+
+               img {
+                  width: 25pt;
+                  height: 25pt;
+               }
+            }
+         }
+
+         .name {
+            .title {
+               overflow: hidden;
+               max-width: 130pt;
+               font-size: 12pt;
+               line-height: 12pt;
+               white-space: nowrap;
+               text-overflow: ellipsis;
+
+               @media (min-width: @miniTablet)  {
+                  max-width: 180pt;
+                  font-size: 13pt;
+               }
+            }
+            .date {
+               margin-top: 2pt;
+               font-size: 10pt;
+               line-height: 10pt;
+               color: #777;
+            }
+         }
+
+         .icon {
+            padding-top: 2pt;
+            padding-left: 4pt;
+            width: 30pt;
+            text-align: center;
+            font-size: 18pt;
+            color: #444;
+
+            @media (min-width: @miniTablet)  {
+               font-size: 20pt;
+               width: 34pt;
+            }
+         }
+      }
+
+      .icon {
+         -webkit-transition: all .1s ease;
+         -moz-transition: all .1s ease;
+         -ie-transition: all .1s ease;
+         -o-transition: all .1s ease;
+         transition: all .1s ease;
+
+         .icon-heart {
+            color: red;
+         }
+
+         &:active {
+            span {
+               color: #460000;
+               text-shadow: 0 0 25pt #ff0008,
+                            0 0 20pt #ff0008,
+                            0 0 15pt #ff0008;
+            }
+         }
+      }
+   }
+}

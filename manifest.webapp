@@ -1,0 +1,17 @@
+{
+  "name": "SimpleSurf",
+  "description": "SimpleSurf - vk.com post collection",
+  "launch_path": "/index.html",
+  "version" : "1.2.0",
+  "developer": {
+    "name": "Evgeny Nikiforov",
+    "email" : "likechokolit@gmail.com"
+  },
+  "default_locale": "ru",
+  "icons": {
+      "256": "/icons/256.png",
+      "128": "/icons/128.png",
+      "64": "/icons/64.png",
+      "48": "/icons/48.png"
+    }
+}

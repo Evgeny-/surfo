@@ -1,0 +1,99 @@
+@import "helpers/mixins";
+@import "helpers/variables";
+
+#menu {
+   .button {
+      padding: 9pt 0;
+      font-size: 16pt;
+      color: #fff;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+
+      &:active {
+         background: rgba(0,0,0,.05);
+      }
+
+      .icon {
+         display: inline-block;
+         line-height: 36pt;
+         height: 36pt;
+         overflow: visible;
+         font-size: 27pt;
+         margin: 0 19pt 0 20pt;
+         vertical-align: middle;
+      }
+   }
+
+   .button-container.favorite {
+      background: #8E3D8D;
+   }
+
+   .submenu {
+      -webkit-transition: all .3s ease;
+      -moz-transition: all .3s ease;
+      overflow: hidden;
+      max-height: 0;
+      color: #fff;
+
+      &.showed {
+         max-height: 300pt;
+         -webkit-transition: all .3s ease;
+         -moz-transition: all .3s ease;
+      }
+
+      div {
+         font-size: 12pt;
+         padding: 8pt;
+         margin: 0 10pt;
+         border-bottom: 1px solid rgba(255,255,255,.4);
+
+         &:active {
+            background: rgba(0,0,0,.05);
+         }
+
+         &:first-of-type {
+            margin-top: 10px;
+         }
+
+         &:last-of-type {
+            margin-bottom: 10px;
+            border-bottom: 0;
+         }
+      }
+   }
+
+   @media (min-width: @tablet)  {
+      .button-container {
+         margin-bottom: 3pt;
+         -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+         box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+      }
+      .button {
+         font-size: 12pt;
+         padding: 3pt 0;
+
+         .icon {
+            line-height: 30pt;
+            height: 30pt;
+            font-size: 23pt;
+            margin: 0 12pt 0 8pt;
+         }
+      }
+   }
+
+   @media (min-width: @bigTablet)  {
+      .button-container {
+         margin-bottom: 4pt;
+      }
+      .button {
+         font-size: 14pt;
+         padding: 5pt 0;
+
+         .icon {
+            line-height: 32pt;
+            height: 32pt;
+            font-size: 24pt;
+            margin: 0 11pt 0 13pt;
+         }
+      }
+   }
+}

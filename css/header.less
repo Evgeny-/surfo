@@ -1,0 +1,66 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+
+#category {
+   .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 42pt;
+      display: table;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      -webkit-transition: background .3s ease;
+      -moz-transition: background .3s ease;
+      -ie-transition: background .3s ease;
+      -o-transition: background .3s ease;
+      transition: background .3s ease;
+
+      > div {
+         display: table-cell;
+         vertical-align: middle;
+      }
+
+      .icon {
+         width: 42pt;
+         font-size: 28pt;
+
+         &:active {
+            background: rgba(0,0,0,.1);
+         }
+
+         span:before {
+            display: inline;
+         }
+      }
+
+      .name {
+         font-size: 14pt;
+      }
+   }
+
+   .header-push {
+      height: 42pt;
+   }
+
+   @media (min-width: @miniTablet)  {
+      .header {
+         height: 48pt;
+
+         .icon {
+            width: 48pt;
+            font-size: 30pt;
+         }
+
+         .name {
+            font-size: 16pt;
+         }
+      }
+
+      .header-push {
+         height: 48pt;
+      }
+   }
+}
